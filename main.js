@@ -16,4 +16,8 @@ $(document).ready(function() {
      alert("si e verificato l errore"+ errore)
    }
   });
+  $("select").click(function () {
+    var selezione = $("select").val();
+    console.log(selezione);
+  })
 });
