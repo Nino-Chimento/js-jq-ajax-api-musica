@@ -46,6 +46,9 @@ header img {
     background: rgb(46, 58, 70);
     text-align: center;
 }
+.cd:hover {
+  transform: scale(1.2);
+}
 
 .cd img {
     max-width: 100%;

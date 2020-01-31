@@ -9,7 +9,7 @@ $(document).ready(function() {
      alert("si e verificato l errore"+ errore)
    }
   });
-  $("button").click(function () {
+  $("select").change(function () {
     var selezione = $("select").val();
     $(".container > div").remove();
     $.ajax({
