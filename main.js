@@ -3,7 +3,6 @@ $(document).ready(function() {
    "url": "https://flynn.boolean.careers/exercises/api/array/music",
    "method": "GET",
    success :function (data) {
-     console.log(data.response.length);
      for (var i = 0; i < data.response.length; i++) {
        var source = $("#entry-template").html();
        var template = Handlebars.compile(source);
@@ -18,6 +17,6 @@ $(document).ready(function() {
   });
   $("select").click(function () {
     var selezione = $("select").val();
-    console.log(selezione);
+    $(".container > div").remove();
   })
 });
