@@ -3,13 +3,7 @@ $(document).ready(function() {
    "url": "https://flynn.boolean.careers/exercises/api/array/music",
    "method": "GET",
    success :function (data) {
-     for (var i = 0; i < data.response.length; i++) {
-       var source = $("#entry-template").html();
-       var template = Handlebars.compile(source);
-       var context = data.response[i];
-       var html = template(context);
-       $(".cds-container").append(html);
-     }
+     ricercaDataBase (data)
    },
    error: function (richiesta,stato,errore) {
      alert("si e verificato l errore"+ errore)
@@ -31,6 +25,9 @@ $(document).ready(function() {
            $(".cds-container").append(html);
 
          }
+         else if (selezione == "Azzera") {
+           ricercaDataBase (data)
+         }
        }
      },
      error: function (richiesta,stato,errore) {
@@ -39,3 +36,12 @@ $(document).ready(function() {
     });
   })
 });
+function ricercaDataBase (data){
+  for (var i = 0; i < data.response.length; i++) {
+    var source = $("#entry-template").html();
+    var template = Handlebars.compile(source);
+    var context = data.response[i];
+    var html = template(context);
+    $(".cds-container").append(html);
+  }
+}
